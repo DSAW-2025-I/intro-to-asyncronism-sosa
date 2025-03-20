@@ -2,8 +2,8 @@
 # Desarrollo de Aplicaciones Web
 ## Introducción al Asíncronismo
 
-**Nombres: Sofia guevara y Sarah Sole**
-**link:(https://dsaw-2025-i.github.io/intro-to-asyncronism-sosa/)**
+- **Nombres: Sofia guevara y Sarah Sole**
+- **link:(https://dsaw-2025-i.github.io/intro-to-asyncronism-sosa/)**
 
 ## Funcionalidades
 
