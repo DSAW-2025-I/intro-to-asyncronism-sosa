@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pokédex Simplificada</title>
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/pokemon-hollow">
+  <link rel="stylesheet" href="https://www.dafont.com/es/starborn.font">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Pokédex</h1>
+    <div class="search-controls">
+      <input
+        type="text"
+        id="searchbar"
+        placeholder="Buscar Pokémon..."
+        onkeyup="searchPokemon()"
+      />
+
+      <select id="aldea">
+        <option value="all">Todos</option>
+        <option value="kanto">Kanto</option>
+        <option value="johto">Johto</option>
+        <option value="hoenn">Hoenn</option>
+        <option value="sinnoh">Sinnoh</option>
+        <option value="unova">Unova</option>
+        <option value="kalos">Kalos</option>
+        <option value="alola">Alola</option>
+        <option value="galar">Galar</option>
+      </select>
+
+      <button id="volver-button" style="display: none;">Volver</button>
+    </div>
+  </header>
+
+  <div class="poke-container" id="poke-container"></div>
+
+    <div id="no-results" class="no-results hidden">
+      No se ha encontrado tu Pokémon. ¡Vuelve a intentarlo!
+    </div>
+
+  <div id="pokemon-popup" class="popup hidden">
+    <div class="popup-content">
+      <span id="close-popup">&times;</span>
+      <div id="pokemon-details"></div>
+    </div>
+  </div>
+</body>
+</html>
