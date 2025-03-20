@@ -1,0 +1,235 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pokemon Solid', sans-serif;
+    font-weight: lighter;
+    background: url(./pokemon-bg.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.196); /* Ajusta opacidad */
+  pointer-events: none;
+  z-index: -1;
+}
+  
+h1 {
+  font-family: 'Pokemon Solid', sans-serif;
+  font-weight: lighter;
+  font-size: 5em;
+  text-align: center;
+  margin: 10px 0;
+  color: #ea0000;
+  text-shadow: 
+    6px 6px 0px rgba(0, 0, 0, 0.747),
+    -6px -3px 0px rgba(105, 105, 105, 0.9),
+    3px -3px 0px rgba(0, 0, 0, 0.747),
+    -3px 3px 0px rgba(105, 105, 105, 0.9),
+    1px 1px 0px rgba(0, 0, 0, 0.8),
+    -1px -1px 0px rgba(0, 0, 0, 0.8),
+    1px -1px 0px rgba(0, 0, 0, 0.8),
+    -1px 1px 0px rgba(0, 0, 0, 0.8);
+}
+
+
+  
+  .search-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+  }
+  
+  #searchbar {
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid #ff0000;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #ff5757, #ff0000);
+    color: white;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    width: 200px;
+  }
+  
+  #searchbar:focus {
+    background: linear-gradient(45deg, #ff0000, #ff5757);
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.6);
+  }
+
+  #searchbar::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+}
+
+#searchbar:hover {
+  background: linear-gradient(45deg, #ff0000, #ff5757);
+  }
+  
+
+  #aldea {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #ff0000;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #ff5757, #ff0000);
+    color: white; 
+    cursor: pointer;
+    outline: none;
+  }
+
+  #aldea option {
+    color: black;
+  }
+
+  #aldea:hover {
+    background: linear-gradient(45deg, #ff0000, #ff5757);
+  }
+  
+  #volver-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 2px solid #ff0000;
+    background: #fff;
+    color: #ff0000;
+    transition: background 0.3s;
+  }
+
+  #volver-button:hover {
+    background: #ffe5e5;
+  }
+  
+  .poke-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 30px;
+  }
+  
+  .card {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #d60000;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-align: center;
+    width: 160px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card img {
+    width: 100px;
+    transition: transform 0.3s ease;
+  }
+  .card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
+}
+  .card:hover img {
+    transform: scale(1.1);
+  }
+  .card h3 {
+    font-size: 1.1em;
+    margin: 5px 0;
+    transition: color 0.3s ease;
+  }
+
+  .card:hover h3 {
+    color: #ff0000; 
+}
+
+.no-results {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1,2em;
+  font-weight: lighter;
+  color: #ffffffe0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.893);
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.764);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+  .hidden {
+   display: none;
+}
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .popup-content {
+    background: rgb(245, 245, 245);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    position: relative;
+  }
+
+  #close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .popup.hidden {
+    display: none;
+  }
+
+  .popup h3 {
+    font-family: 'Pokemon Solid', sans-serif;
+    font-weight: lighter;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(154, 154, 154, 0.533);
+    line-height: 1.2;
+  }
+
+  .popup p{
+    font-family: 'Starborn', sans-serif;
+    font-weight: 700;
+    color: #424242;
+    text-shadow: 1px 1px 2px rgba(154, 154, 154, 0.533);
+    line-height: 1.2;
+  }
+  
+  h2{
+    font-family: 'Pokemon Solid', sans-serif;
+    font-weight: lighter;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(154, 154, 154, 0.533);
+    line-height: 1.2;
+  }
+
+  h3, p {
+    font-family: 'Starborn', sans-serif;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.533);
+    line-height: 1.2;
+  }  
