@@ -2,6 +2,7 @@
 # Desarrollo de Aplicaciones Web
 ## Introducción al Asíncronismo
 
+Nombres: Sofia guevara y Sarah Sole
 
 ## Funcionalidades
 
